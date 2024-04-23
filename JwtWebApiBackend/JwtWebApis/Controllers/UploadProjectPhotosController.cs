@@ -33,14 +33,6 @@ namespace JwtWebApis.Controllers
                 var trustedFileNameForDisplay = WebUtility.HtmlEncode(untrustedFileName);
                 trustedFileNameForFileStorage = Path.GetRandomFileName();
 
-                //string webRootPath = _env.ContentRootPath;
-
-                //string Imagefolderpath = @"Images\" + id.ToString();
-                //string DirectoryPath = Path.Combine(webRootPath, Imagefolderpath);
-                //Directory.CreateDirectory(DirectoryPath);
-                //var path = Path.Combine(DirectoryPath, trustedFileNameForFileStorage);
-
-               // var path = Path.Combine(_env.ContentRootPath, "Images", trustedFileNameForFileStorage);
                 var subpath = Path.Combine(_env.ContentRootPath, "Images");
                 System.IO.Directory.CreateDirectory(subpath);
                 var path = Path.Combine(subpath, trustedFileNameForFileStorage);

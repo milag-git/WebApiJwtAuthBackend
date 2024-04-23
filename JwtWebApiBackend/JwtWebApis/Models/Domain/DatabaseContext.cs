@@ -13,20 +13,7 @@ namespace JwtWebApis.Models.Domain
 
         public DbSet<TokenInfo> TokenInfo { get; set; }
 
-        public DbSet<FileDetails> FileDetails { get; set; } = null!;
-
-        public IEnumerable<FileDetails> SP_2mob_EMP_UPLOADPROJECTPHOTOS_READ_RecentProjects1(int TechEngr, DateTime startdate)
-        {
-
-
-            return this.FileDetails
-                   .FromSqlRaw("EXEC [dbo].[2mob_EMP_UPLOADPROJECTPHOTOS_READ_RecentProjects1] @p0,@p1,@p2", TechEngr, startdate, startdate.AddDays(30))
-                   .ToArray();
-
-        }
-
-        public DbSet<tblSchedule> tblSchedule { get; set; } = null!;
-        public DbSet<tblProjects> tblProjects { get; set; } = null!;
+        
 
     }
 }
